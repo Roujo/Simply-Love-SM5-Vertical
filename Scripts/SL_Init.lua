@@ -386,6 +386,15 @@ function InitializeSimplyLove()
 		PREFSMAN:SetPreference("GlobalOffsetSeconds", SL.Global.DefaultGlobalOffsetSeconds)
 		SM("Offset has been reset to machine standard. (".. string.format("%.3f" ,PREFSMAN:GetPreference("GlobalOffsetSeconds")) .. ")")
 	end
+
+	-- Create an empty list of favorite songs if it doesn't exist yet
+	local favoritesFilePath = THEME:GetCurrentThemeDirectory().."Other/SongManager Favorites.txt"
+	if not (FILEMAN:DoesFileExist(favoritesFilePath)) then
+		local file = RageFileUtil.CreateRageFile()
+		file:Open(favoritesFilePath, 2) -- 2 for Write
+		file:Close()
+		file:destroy();
+	end
 end
 
 -- TODO: remove this; it's for debugging purposes (Control+F2 to reload scripts) only

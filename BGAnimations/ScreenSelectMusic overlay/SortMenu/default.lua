@@ -131,6 +131,7 @@ local t = Def.ActorFrame {
 
 		table.insert(wheel_options, {"SortBy", "Popularity"})
 		table.insert(wheel_options, {"SortBy", "Recent"})
+		table.insert(wheel_options, {"SortBy", "Preferred"})
 
 
 		-- Allow players to switch from single to double and from double to single

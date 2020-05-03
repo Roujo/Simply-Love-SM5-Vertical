@@ -26,7 +26,7 @@ local function input(event)
 			local focus = sort_wheel:get_actor_item_at_focus_pos()
 
 			if focus.kind == "SortBy" then
-				MESSAGEMAN:Broadcast('Sort',{order=focus.sort_by})
+				MESSAGEMAN:Broadcast('Sort',{order=focus.sort_by, source="Menu"})
 				overlay:queuecommand("DirectInputToEngine")
 
 
